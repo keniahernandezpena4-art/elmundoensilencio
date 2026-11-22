@@ -323,7 +323,54 @@ body { display: flex; }
     text-align: center;
     color: white;
 }
+/* Fondo general */
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #ff6ec7, #a855f7);
+  font-family: Arial, sans-serif;
+}
 
+/* Contenedor principal - aquí está el truco */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* para que en cel se ponga abajo */
+  max-width: 1200px;
+  margin: 0 auto; /* centrar todo */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Menú de la izquierda */
+.sidebar {
+  width: 250px;
+  background: #1a1a1a;
+  border-radius: 15px;
+  padding: 15px;
+  flex-shrink: 0;
+}
+
+/* Contenido de la derecha */
+.content {
+  flex: 1; /* que ocupe lo que sobra */
+  min-width: 300px; /* para que no se haga chiquito */
+}
+
+/* Para celular: que el menú se ponga arriba */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .sidebar {
+    width: 100%;
+  }
+}
+
+/* Que las imágenes y videos no se salgan */
+img, video, iframe {
+  max-width: 100%;
+  border-radius: 10px;
+}
 
 
 
