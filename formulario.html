@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Validación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar">
+        <h1 class="logo">🎵 Lira<span>Play</span></h1>
+        <img src="liraplay.JPEG">
+        
+        <nav>
+<nav>
+    <button class="nav-btn" onclick="window.location.href='index.html'">Inicio</button>
+    
+    
+    <!-- MENÚ DESPLEGABLE -->
+    <div class="dropdown">
+        <button class="nav-btn dropdown-btn">⚙️ Inscripción ▼</button>
+        <div class="dropdown-content">
+            <button onclick="showSection('formulario')">"Inscribete para una mejor experiencia por tan solo $99 pesos"</button>
+            
+        </div>
+    </div>
+</nav>
+    </aside>
+    <div class="container">
+        <h1>👑Activa tu "LiraPlay premium"👑</h1>
+        <form id="miFormulario" novalidate>
+            
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="ESCRIBE EL NOMBRE AQUÍ" maxlength="100">
+                <span class="error" id="error-nombre"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="apellidoP">Apellido Paterno:</label>
+                <input type="text" id="apellidoP" placeholder="ESCRIBE EL APELLIDO PATERNO AQUÍ" maxlength="100">
+                <span class="error" id="error-apellidoP"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="apellidoM">Apellido Materno:</label>
+                <input type="text" id="apellidoM" placeholder="ESCRIBE EL APELLIDO MATERNO AQUÍ" maxlength="100">
+                <span class="error" id="error-apellidoM"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="edad">Edad:</label>
+                <input type="text" id="edad" placeholder="ESCIBE LA EDAD AQUÍ" inputmode="numeric" maxlength="3">
+                <span class="error" id="error-edad"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Fecha de Nacimiento:</label>
+                 <input type="number" id="diaNac" placeholder="DIA" min="1" max="31" style="width: 70px" onkeydown="return false" onpaste="return false">
+                /
+                <input type="number" id="mesNac" placeholder="MES" min="1" max="12" style="width: 70px" onkeydown="return false" onpaste="return false">
+                /
+                <input type="number" id="anioNac" placeholder="AÑO" min="1876" max="2026" style="width: 90px" onkeydown="return false" onpaste="return false">
+                <span class="error" id="error-fechaNac"></span>
+                </div>
+
+
+
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" placeholder="ESCRIBE EL TELÉFONO AQUÍ" inputmode="numeric" maxlength="10">
+                <span class="error" id="error-telefono"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="cuenta">Número de Cuenta:</label>
+                <input type="text" id="cuenta" placeholder="ESCRIBE EL NÚMERO DE CUENTA AQUÍ" inputmode="numeric" maxlength="16">
+                <span class="error" id="error-cuenta"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="ESCRIBE EL EMAIL AQUÍ">
+                <span class="error" id="error-email"></span>
+            </div>
+
+            <button type="button" id="btnValidar">Activar</button>
+            <p id="mensajeFinal"></p>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
