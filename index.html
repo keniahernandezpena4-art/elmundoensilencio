@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiraPlay- Tus Artistas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar">
+        <h1 class="logo">🎵 Lira<span>Play</span></h1>
+        <img src="liraplay.JPEG">
+        
+        <nav>
+<nav>
+    <button class="nav-btn active" onclick="showSection('inicio')">🏠 Inicio</button>
+    
+    <!-- MENÚ DESPLEGABLE -->
+    <div class="dropdown">
+        <button class="nav-btn dropdown-btn">⚙️ Inscripción ▼</button>
+        <div class="dropdown-content">
+            <button class="nav-btn" onclick="window.location.href='formulario.html'">LiraPlay Premium</button>
+            <button ">Elaborado por: Kenia Hernández Perña</button>
+        </div>
+    </div>
+</nav>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main">
+        <header class="topbar">
+            <input type="text" placeholder="Buscar artista o canción..." class="search-bar" id="searchInput" onkeyup="searchArtist()">
+            <button class="btn-user" onclick="alert('Kenia Hernández Perña')">.</button>
+        </header>
+
+        <!-- SECCIÓN INICIO -->
+        <section id="inicio" class="section active">
+            <h2>Elige un Artista</h2>
+            <div class="artists-grid">
+                <button class="genre-btn" data-name="santa grifa" onclick="showArtist('santagrifa')">
+                    <img src="lsg1.jpg" alt="La Santa Grifa"> La Santa Grifa
+                </button>
+                <button class="genre-btn" data-name="ivan cornejo" onclick="showArtist('ivancornejo')">
+                    <img src="ivan1.jpg" alt="Iván Cornejo"> Iván Cornejo
+                </button>
+                <button class="genre-btn" data-name="kevin kaarl" onclick="showArtist('kevinkaarl')">
+                    <img src="kevin1.jpg" alt="Kevin Kaarl"> Kevin Kaarl
+                </button>
+                <button class="genre-btn" data-name="sobresdylan" onclick="showArtist('sobresdylan')">
+                    <img src="sobres1.jpg" alt="Sobresdylan"> Sobresdylan
+                </button>
+                <button class="genre-btn" data-name="mon laferte" onclick="showArtist('monlaferte')">
+                    <img src="mon1.jpg" alt="Mon Laferte"> Mon Laferte
+                </button>
+                <button class="genre-btn" data-name="charles ans" onclick="showArtist('charlesans')">
+                    <img src="charles1.jpg" alt="Charles Ans"> Charles Ans
+                </button>
+            </div>
+        </section>
+        <!-- SECCIÓN FORMULARIO -->
+<section id="formulario" class="section" style="display: none;">
+    <h2>Registro de Alumno</h2>
+    <div class="container-form">
+        <form id="miFormulario" novalidate>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="ESCRIBIR EL NOMBRE AQUÍ" maxlength="100">
+                <span class="error" id="error-nombre"></span>
+            </div>
+            <!-- Aquí van los demás campos que ya tienes -->
+            <button type="button" id="btnValidar">Activar</button>
+        </form>
+    </div>
+</section>
+
+        <!-- SECCIÓN ARTISTAS -->
+        <section id="artistas" class="section">
+            <div class="artist-header">
+                <img id="artist-img" src="" alt="portada artista">
+                <div>
+                    <h2 id="artist-title">Artista</h2>
+                    <p id="artist-genre" class="genre-desc"></p>
+                </div>
+            </div>
+            </div> <!-- se cierra artist-header -->
+<div id="artist-content">
+    <h2>Canciones</h2>
+    <div id="songs-list" class="songs-grid"></div>
+</div> <!-- se cierra artist-content -->
+        </section>
+
+    <!-- REPRODUCTOR ABAJO -->
+    <footer class="player">
+        <div class="song-info">
+            <img id="player-img" src="https://picsum.photos/50/50?random=10" alt="cover">
+            <div>
+                <p class="song-name" id="player-song">Nada reproduciendo</p>
+                <p class="artist-name" id="player-artist">MusicFlow</p>
+            </div>
+            <button class="btn-fav" id="favBtn" onclick="toggleFavorite()">🤍</button>
+        </div>
+        <button class="btn-play-big" id="playPauseBtn" onclick="togglePlay()">▶️</button>
+        <div class="player-controls">
+            <button onclick="alert('Aleatorio')">🔀</button>
+
+        </div>
+        <audio id="audioPlayer"></audio>
+    </footer>
+    <script src="script.js"></script> 
+
+</body>
+</html>
